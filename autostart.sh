@@ -32,3 +32,5 @@ xdg-user-dirs-update
 
 hypr-dynamic-monitors.sh &
 arrange-workspaces.sh &
+
+exec Hyprland
