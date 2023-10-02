@@ -1,0 +1,96 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "JetBrainsMono Nerd Font";
+    border: none;
+    min-height: 0;
+}
+
+#waybar {
+    background-color: rgba(30,33,40,0.0);
+    color: #D8DEE9;
+    transition-property: background-color;
+    transition-duration: .5s;
+    font-size: 11px;
+    font-weight: bold;
+    
+}
+
+/* Module */
+/*clock,*/
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#mpd,
+#submap,
+#disk,
+#battery,
+#backlight,
+#custom-recording,
+#workspaces {
+    padding: 0.7em;
+    color: #D8DEE9;
+    margin: 2px 2px;
+    background: #151515;
+	border-radius: 5px;
+	box-shadow: 2px 2px 1px 1px #101010;
+}
+
+#memory {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#workspaces button {
+    font-weight: bold; /* Somewhy the bar-wide setting is ignored*/
+    padding: 0;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin: 2px 2px;
+}
+#workspaces button.active {
+    border-radius: 5px;
+    color: #62AEEF;
+    margin: 2px 2px;
+}
+
+#battery.charging, #battery.plugged {
+    color: #154c79;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: #e28743;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#clock.hour {
+	background-color: #151515;
+	border-radius: 5px 5px 0 0;
+	color: #cba6f7;
+	padding: 0.7em 0.7em 0 0.7em;
+	margin: 2px 2px 0 2px;
+    font-size: 15px;
+    box-shadow: 2px 2px 1px 1px #101010;
+}
+#clock.min {
+	background-color: #151515;
+	border-radius: 0 0 5px 5px;
+	color: #f38ba8;
+	padding: 0 0.7em 0.7em 0.7em;
+	margin: 0 2px 2px 2px;
+    font-size: 15px;
+    box-shadow: 2px 2px 1px 1px #101010;
+}
